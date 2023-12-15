@@ -1,0 +1,17 @@
+pub fn {{func}}(x: i32) -> i32 {
+    x + 1
+}
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use test_case::test_case;
+
+    #[test_case(1, 2; "case 1")]
+    #[test_case(2, 3; "case 2")]
+    fn test_{{func}}(x: i32, expected: i32) {
+        let result = {{func}}(x);
+        assert_eq!(result, expected);
+    }
+}
