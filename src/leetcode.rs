@@ -23,3 +23,7 @@ mod leetcode_217;
 pub use leetcode_217::*;
 mod leetcode_53;
 pub use leetcode_53::*;
+mod leetcode_896;
+pub use leetcode_896::*;
+mod leetcode_13;
+pub use leetcode_13::*;
