@@ -31,3 +31,5 @@ mod leetcode_1;
 pub use leetcode_1::*;
 mod leetcode_121;
 pub use leetcode_121::*;
+mod leetcode_566;
+pub use leetcode_566::*;
