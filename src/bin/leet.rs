@@ -43,16 +43,10 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 
     let lib_file = File::options()
         .append(true)
-        .open("./src/leetcode.rs")
+        .open("./src/leetcode/mod.rs")
         .unwrap();
     handlebars
-        .register_template_string("import", "mod leetcode_{{num}};\n")
-        .unwrap();
-    handlebars
-        .render_to_write("import", &data, &lib_file)
-        .unwrap();
-    handlebars
-        .register_template_string("export", "pub use leetcode_{{num}}::*;\n")
+        .register_template_string("export", "pub mod leetcode_{{num}};\n")
         .unwrap();
     handlebars
         .render_to_write("export", &data, &lib_file)
